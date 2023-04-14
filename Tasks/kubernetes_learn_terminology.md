@@ -25,7 +25,24 @@ There are different types of workloads that can be deployed in Kubernetes, inclu
 By defining workloads in Kubernetes, you can take advantage of it's powerful scheduling, scaling, and self-healing capabilities. Kubernetes ensures that your workloads are running according to your desired specifications, and can automatically recover from failures and maintain high availability.
 
 ### Services
-will learn more in depth before contributing my thoughts...
+A Service is an abstraction that defines a logical set of Pods and also a policy by which to access them. Services allow you to define a single, stable IP address and DNS name for a set of Pods using selectors, even if those Pods are running on different nodes within the cluster.
+I have created an example service manifest to show how they are structured and what the defined parameters are actually doing:
+
+```yaml
+apiVersion: v1
+kind: Service           # 'apiVersion' and 'kind' define the type of Kubernetes object being created, in this case, a Service.
+metadata:               # 'metadata' contains information about the Service, such as its name.
+  name: my-service      
+spec:                   # 'spec' defines the Service's specifications, including the 'selector', 'ports', and 'type'.
+  selector:             # 'selector' specifies which Pods the Service will route traffic to. In this example, it selects Pods with the label 'app: my-app'.
+    app: my-app
+  ports:                # 'ports' define the ports on which the Service will listen for traffic. 
+    - name: http        # In this example, the Service will listen on port '80' and forward traffic to port '8080' on the selected Pods.
+      port: 80
+      targetPort: 8080
+  type: ClusterIP       # 'type' defines how the Service is exposed. It is set to 'ClusterIP', which means the Service is only accessible from within the cluster.
+  
+```
 
 ### Load Balancing
 will learn more in depth before contributing my thoughts...
