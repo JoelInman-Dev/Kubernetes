@@ -1,0 +1,14 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: clusterfuck
+nodes:
+  - role: control-plane
+  - role: worker
+    labels:
+      tier: assets
+  - role: worker
+    labels:
+      tier: backend
+  - role: worker
+    labels:
+      tier: frontend
