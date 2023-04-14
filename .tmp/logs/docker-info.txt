@@ -1,0 +1,64 @@
+Client:
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc., v0.10.4)
+  compose: Docker Compose (Docker Inc., v2.17.2)
+  dev: Docker Dev Environments (Docker Inc., v0.1.0)
+  extension: Manages Docker extensions (Docker Inc., v0.2.19)
+  init: Creates Docker-related starter files for your project (Docker Inc., v0.1.0-beta.2)
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc., 0.6.0)
+  scan: Docker Scan (Docker Inc., v0.25.0)
+  scout: Command line tool for Docker Scout (Docker Inc., v0.9.0)
+
+Server:
+ Containers: 27
+  Running: 23
+  Paused: 0
+  Stopped: 4
+ Images: 15
+ Server Version: 20.10.24
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 2456e983eb9e37e47538f59ea18f2043c9a73640
+ runc version: v1.1.4-0-g5fd4c4d
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: default
+  cgroupns
+ Kernel Version: 5.15.49-linuxkit
+ Operating System: Docker Desktop
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 2
+ Total Memory: 15.64GiB
+ Name: docker-desktop
+ ID: G73C:XHY5:FN3D:EW5O:NLLL:UQO5:JEBV:74VX:237I:FSGI:MB24:MWVD
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  hubproxy.docker.internal:5555
+  127.0.0.0/8
+ Live Restore Enabled: false
+
