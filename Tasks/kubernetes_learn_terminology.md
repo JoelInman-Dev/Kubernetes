@@ -41,11 +41,29 @@ spec:                   # 'spec' defines the Service's specifications, including
       port: 80
       targetPort: 8080
   type: ClusterIP       # 'type' defines how the Service is exposed. It is set to 'ClusterIP', which means the Service is only accessible from within the cluster.
-  
+
 ```
 
 ### Load Balancing
-will learn more in depth before contributing my thoughts...
+Load Balancing service is the process of distributing incoming network traffic across a selected group of Pods. This helps to improve the overall availability and scalability of your application, by ensuring that *all* traffic is evenly distributed across *all* available selected Pods.
+To create a load balancing service manifest, you could simply use the example service manifest above as a template. Using that service manifest as a template you will need to update only 2 parameters! Give it a new 'name', so 'name: load-balance-service' and also change the 'type' from 'type: ClusterIP' to 'type: LoadBalancer'. 
+My example:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: load-balance-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+
+```
 
 ### Networking
 will learn more in depth before contributing my thoughts...
