@@ -33,7 +33,7 @@
 
   The structure of the logs dir generated will look similar to the following by default
   
-   ```
+```
     ├── docker-info.txt
     └── kind-control-plane/
         ├── containers
@@ -43,7 +43,8 @@
         ├── kubelet.log
         ├── kubernetes-version.txt
         └── pods/
-    ```
+```
+
 ⚒️ - Nice! Now delete the cluster, it's time to look at creating some manifests! [ YAML files ] 
 
   `kind delete cluster --name new-cluster`
@@ -53,8 +54,10 @@
 The minimal cluster config requirements are literally:
 
 ```
+
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
+
 ```
 
 To deploy an application in Kubernetes, you first need to create **Deployment** and **Services** manifests in YAML files. 
