@@ -66,7 +66,7 @@ luckily, there's also a bunch of tools available that can help to simplify any a
 
 #### *It's important to understand at this point, that any parameters passed in your CLI invocation will take priority over the same parameter, if declared within your config manifest.*
 
-To get started, I am going to want to create the following Manifests: [My completed manifests in Kubernetes/manifests](https://github.com/joelinman-nxp/Kubernetes/manifests)
+To get started, I am going to want to create the following Manifests: [My completed manifests in Kubernetes/manifests](https://github.com/joelinman-nxp/Kubernetes/tree/main/manifests)
 
 - **config.yaml** // This will declare the configuration for the KIND cluster.
 - **deploy.yaml** // This will instruct Kubernetes on how to create and update instances of my application.
