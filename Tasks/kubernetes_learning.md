@@ -31,9 +31,9 @@
     
     Docker > Preferences > Advanced > Memory 
     
-- ⚒️ | Create First Cluster using KIND. you can use use the following basic flags: 
+- ⚒️ | Let's jump straight in and Create my First Cluster using KIND. You can use use the following basic flags: 
 
-  `kind create cluster --name new-cluster --config env/manifests/`
+  `kind create cluster --name new-cluster --config=/env/manifests/`
     
     **--name** | to name the cluster
     
@@ -41,7 +41,7 @@
     
     **--config** | to declare the config manifest[s] to be used. If declared, only the config manifests passed here will be used during the creation.
     
-- ⚒️ | Setup some log outputting for the new cluster 
+- ⚒️ | I'll set up some log outputting for the new cluster 
 
   `kind export logs /tmp/logs --name new-cluster`
 
@@ -64,9 +64,24 @@
 
 ## YAML Manifests
 
-The minimal config requirements are:
+The minimal cluster config requirements are literally:
 
 ```
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 ```
+
+To deploy an application in Kubernetes, you first need to create **Deployment** and **Services** manifests in YAML files. 
+Next, you apply the manifests to your Kubernetes cluster using the `kubectl apply -f /path/to/manifests/` command, now, verify that your application’s pods are running with `kubectl get pods`, and test the Services with `kubectl get services` [svc for short], and attempt accessing the service using a web browser or a tool like cURL. 
+luckily, there's also a bunch of tools available that can help to simplify any application deployment in Kubernetes, such as 'Helm Charts' and 'Kubernetes Operators'.
+
+#### *It's important to understand at this point, that any parameters passed in your CLI invocation will take priority over the same parameter, if declared within your config manifest.*
+
+To get started, I am going to want to create the following Manifests: [My completed manifests in /Kubernetes](https://github.com/joelinman-nxp/Kubernetes)
+
+- **config.yaml** // This will declare the configuration for the KIND cluster.
+- **deploy.yaml** // This will instruct Kubernetes on how to create and update instances of my application.
+
+### A quick note on deployments.
+Once the application instances are created, a Kubernetes Deployment controller will continuously monitor those instances. Should a Node hosting an instance die/crash or get deleted, the Deployment controller automatically replaces the instance with an instance on another Node in the cluster. This effectively provides a sort of self-healing mechanism to address any unexpected machine failure or maintenance.
+
