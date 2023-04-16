@@ -56,11 +56,19 @@ However, Kubernetes is a better option for organizations seeking to benefit from
 
 Docker Swarm is a container orchestration tool that enables users to manage and scale containerized applications across a cluster of Docker hosts. It is simpler to set up and use than Kubernetes, making it a popular choice for small to medium-sized applications.
 
+### Workloads
+
 One of the key differences between Docker Swarm and Kubernetes is in the way they manage workloads. Docker Swarm uses a declarative approach to specify how applications should run on a cluster of hosts. This means that users define the desired state of the application, and Docker Swarm takes care of scheduling and scaling the containers to match that desired state.
+
+### Networking
 
 Docker Swarm also provides a simpler networking model than Kubernetes. By default, Docker Swarm uses an overlay network that enables containers to communicate with each other. However, Docker Swarm lacks some of the advanced networking features that Kubernetes provides.
 
+### Storage
+
 In terms of storage, Docker Swarm has a more limited range of storage options than Kubernetes, but it still supports several types of storage drivers, including local, NFS, and Azure disk.
+
+### Why use Docker Swarm vs Kubernetes
 
 Overall, Docker Swarm is a simpler and easier-to-use container orchestration platform than Kubernetes, making it a popular choice for small to medium-sized applications that don't require the advanced features and scalability of Kubernetes.
 
